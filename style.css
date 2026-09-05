@@ -4091,3 +4091,9 @@ section,
     padding-left: 6px !important;
   }
 }
+/* FIX — ACHIEVEMENT LABEL VISIBILITY */
+.achievement > span {
+  color: #111512 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
