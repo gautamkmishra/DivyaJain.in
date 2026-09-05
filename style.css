@@ -4118,3 +4118,43 @@ section,
   color: #111512 !important;
   -webkit-text-fill-color: #111512 !important;
 }
+/* =========================================
+   FOOTER SOCIAL ICONS
+   ========================================= */
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.footer-socials a {
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.footer-socials img {
+  width: 18px;
+  height: 18px;
+  display: block;
+  opacity: 0.72;
+  filter: brightness(0) saturate(100%);
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.footer-socials a:hover {
+  transform: translateY(-3px);
+}
+
+.footer-socials a:hover img {
+  opacity: 1;
+  transform: scale(1.08);
+}
