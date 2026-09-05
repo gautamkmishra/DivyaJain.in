@@ -4824,3 +4824,11 @@ section,
   }
 
 }
+/* SELECTED WORK — READ SAMPLE ANCHOR */
+.work .selected-post-image {
+  scroll-margin-top: 120px !important;
+}
+
+.work .selected-post-info .text-link {
+  text-decoration: none !important;
+}
