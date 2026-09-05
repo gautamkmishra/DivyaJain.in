@@ -3422,3 +3422,259 @@ section,
   --grid: rgba(220, 225, 218, 0.055);
   --glow: rgba(120, 145, 130, 0.18);
 }
+/* =========================================================
+   FINAL LIGHT EDITORIAL BACKGROUND
+   This is the active background
+   ========================================================= */
+
+html {
+  background: #f3f6f3 !important;
+}
+
+body {
+  background:
+    radial-gradient(
+      700px 500px at 78% 8%,
+      rgba(214, 226, 218, 0.65),
+      transparent 70%
+    ),
+    radial-gradient(
+      600px 500px at 8% 70%,
+      rgba(224, 232, 226, 0.55),
+      transparent 72%
+    ),
+    linear-gradient(
+      135deg,
+      #f5f8f6 0%,
+      #eef3ef 50%,
+      #f4f7f5 100%
+    ) !important;
+
+  color: #111512 !important;
+  background-attachment: fixed !important;
+}
+
+
+/* Fine grid — reference style */
+body::after {
+  content: "" !important;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(60, 75, 66, 0.075) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(60, 75, 66, 0.075) 1px,
+      transparent 1px
+    ) !important;
+
+  background-size: 62px 62px !important;
+
+  opacity: 0.75 !important;
+}
+
+
+/* Soft central light */
+body::before {
+  content: "" !important;
+  position: fixed !important;
+  width: 700px !important;
+  height: 700px !important;
+  left: 50% !important;
+  top: 20% !important;
+  transform: translate(-50%, -50%) !important;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(220, 231, 224, 0.65) 0%,
+      rgba(220, 231, 224, 0.25) 30%,
+      transparent 70%
+    ) !important;
+
+  filter: blur(20px) !important;
+  opacity: 0.8 !important;
+
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+
+/* Content stays above grid */
+header,
+main,
+footer,
+section {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Header — light like reference */
+.site-header,
+.site-header.scrolled,
+header {
+  background: rgba(243, 247, 244, 0.82) !important;
+  border-bottom: 1px solid rgba(30, 40, 35, 0.10) !important;
+
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+}
+
+
+/* Main typography */
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  color: #111512 !important;
+}
+
+body p {
+  color: #4e5752 !important;
+}
+
+
+/* Hero */
+.hero {
+  background: transparent !important;
+}
+
+.hero::after {
+  display: none !important;
+}
+
+
+/* All sections transparent */
+section,
+.about,
+.services,
+.work,
+.case-studies,
+.achievements,
+.experience,
+.tools,
+.testimonials,
+.contact {
+  background: transparent !important;
+}
+
+
+/* Lines */
+.services-list,
+.experience-list,
+.section-heading,
+.service-item,
+.experience-item {
+  border-color: rgba(30, 40, 35, 0.12) !important;
+}
+
+
+/* Cards */
+.post-card,
+.case-card,
+.achievement,
+.tool,
+.testimonial,
+.work-feature,
+.work-secondary {
+  background: rgba(255, 255, 255, 0.42) !important;
+  border-color: rgba(30, 40, 35, 0.11) !important;
+}
+
+
+/* Accent */
+.section-number,
+.eyebrow,
+.section-label,
+.work-label,
+.case-label {
+  color: #68766f !important;
+}
+
+
+/* Selection */
+::selection {
+  background: rgba(90, 110, 99, 0.20) !important;
+  color: #111512 !important;
+}
+
+
+/* =========================================================
+   FUTURE DARK MODE
+   ========================================================= */
+
+[data-theme="dark"] {
+  background: #111310;
+}
+
+[data-theme="dark"] body {
+  background:
+    radial-gradient(
+      700px 500px at 80% 10%,
+      rgba(90, 110, 96, 0.16),
+      transparent 70%
+    ),
+    linear-gradient(
+      135deg,
+      #111310 0%,
+      #151815 50%,
+      #101210 100%
+    ) !important;
+
+  color: #eeeae1 !important;
+}
+
+[data-theme="dark"] body::after {
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(220, 225, 218, 0.055) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(220, 225, 218, 0.055) 1px,
+      transparent 1px
+    ) !important;
+}
+
+[data-theme="dark"] .site-header,
+[data-theme="dark"] .site-header.scrolled,
+[data-theme="dark"] header {
+  background: rgba(17, 19, 16, 0.84) !important;
+  border-color: rgba(235, 235, 225, 0.08) !important;
+}
+
+[data-theme="dark"] body h1,
+[data-theme="dark"] body h2,
+[data-theme="dark"] body h3,
+[data-theme="dark"] body h4,
+[data-theme="dark"] body h5,
+[data-theme="dark"] body h6 {
+  color: #eeeae1 !important;
+}
+
+[data-theme="dark"] body p {
+  color: #b7b9b2 !important;
+}
+
+[data-theme="dark"] .post-card,
+[data-theme="dark"] .case-card,
+[data-theme="dark"] .achievement,
+[data-theme="dark"] .tool,
+[data-theme="dark"] .testimonial,
+[data-theme="dark"] .work-feature,
+[data-theme="dark"] .work-secondary {
+  background: rgba(255,255,255,0.025) !important;
+  border-color: rgba(235,235,225,0.10) !important;
+}
