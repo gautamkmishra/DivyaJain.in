@@ -3918,3 +3918,176 @@ section,
   }
 
 }
+/* =========================================================
+   NAVBAR — NO FADE / ALWAYS VISIBLE
+   ========================================================= */
+
+.site-header .main-nav a,
+.site-header .main-nav a:hover,
+.site-header .main-nav a:focus,
+.site-header .main-nav a:active,
+.site-header .main-nav a.active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+  color: #4e5752 !important;
+  transition: color 0.25s ease !important;
+}
+
+.site-header .main-nav a:hover {
+  color: #111512 !important;
+}
+
+/* Keep underline animation */
+.site-header .main-nav a::after {
+  opacity: 1 !important;
+}
+
+/* =========================================================
+   WHAT I DO — PREMIUM MOUSE INTERACTION
+   ========================================================= */
+
+.services .service-item {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.45s cubic-bezier(.22,1,.36,1),
+    padding-left 0.45s cubic-bezier(.22,1,.36,1),
+    background 0.35s ease !important;
+}
+
+.services .service-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: #68766f;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.45s cubic-bezier(.22,1,.36,1);
+}
+
+.services .service-item:hover {
+  transform: translateX(8px) !important;
+  padding-left: 16px !important;
+  background: rgba(255,255,255,.22) !important;
+}
+
+.services .service-item:hover::before {
+  transform: scaleY(1);
+}
+
+.services .service-item h3,
+.services .service-item p,
+.services .service-number,
+.services .service-arrow {
+  transition:
+    transform 0.4s cubic-bezier(.22,1,.36,1),
+    color 0.3s ease,
+    opacity 0.3s ease !important;
+}
+
+.services .service-item:hover h3 {
+  transform: translateX(5px);
+}
+
+.services .service-item:hover p {
+  transform: translateX(5px);
+}
+
+.services .service-item:hover .service-number {
+  transform: translateX(5px);
+  color: #68766f !important;
+}
+
+.services .service-item:hover .service-arrow {
+  transform: translate(7px,-5px);
+  color: #111512 !important;
+}
+
+
+/* =========================================================
+   EXPERIENCE — PREMIUM MOUSE INTERACTION
+   ========================================================= */
+
+.experience .experience-item {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.45s cubic-bezier(.22,1,.36,1),
+    padding-left 0.45s cubic-bezier(.22,1,.36,1),
+    background 0.35s ease !important;
+}
+
+.experience .experience-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: #68766f;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.45s cubic-bezier(.22,1,.36,1);
+}
+
+.experience .experience-item:hover {
+  transform: translateX(8px) !important;
+  padding-left: 16px !important;
+  background: rgba(255,255,255,.22) !important;
+}
+
+.experience .experience-item:hover::before {
+  transform: scaleY(1);
+}
+
+.experience .experience-item h3,
+.experience .experience-item p,
+.experience .experience-date,
+.experience .experience-company {
+  transition:
+    transform 0.4s cubic-bezier(.22,1,.36,1),
+    color 0.3s ease !important;
+}
+
+.experience .experience-item:hover h3 {
+  transform: translateX(5px);
+}
+
+.experience .experience-item:hover p {
+  transform: translateX(5px);
+}
+
+.experience .experience-item:hover .experience-date {
+  transform: translateX(5px);
+  color: #68766f !important;
+}
+
+.experience .experience-item:hover .experience-company {
+  transform: translateX(5px);
+  color: #68766f !important;
+}
+
+
+/* Don't let reveal animation interfere with hover */
+.services .service-item.reveal,
+.experience .experience-item.reveal {
+  transition:
+    opacity 0.8s var(--ease),
+    transform 0.45s cubic-bezier(.22,1,.36,1),
+    padding-left 0.45s cubic-bezier(.22,1,.36,1),
+    background 0.35s ease !important;
+}
+
+
+/* Mobile */
+@media (max-width: 700px) {
+  .services .service-item:hover,
+  .experience .experience-item:hover {
+    transform: translateX(3px) !important;
+    padding-left: 6px !important;
+  }
+}
