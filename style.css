@@ -3678,3 +3678,243 @@ section,
   background: rgba(255,255,255,0.025) !important;
   border-color: rgba(235,235,225,0.10) !important;
 }
+/* =========================================================
+   FINAL INTERACTION POLISH
+   NAV + SERVICES + EXPERIENCE
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. HEADER NAV — NEVER FADE
+   --------------------------------------------------------- */
+
+.main-nav,
+.main-nav a {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.main-nav a {
+  color: #4e5752 !important;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease !important;
+}
+
+.main-nav a:hover {
+  opacity: 1 !important;
+  visibility: visible !important;
+  color: #111512 !important;
+  transform: translateY(-1px);
+}
+
+.main-nav a::after {
+  opacity: 1 !important;
+}
+
+
+/* ---------------------------------------------------------
+   2. SERVICES — PREMIUM MOUSE HOVER
+   --------------------------------------------------------- */
+
+.services .service-item {
+  position: relative;
+  transition:
+    transform 0.45s cubic-bezier(.22,1,.36,1),
+    padding-left 0.45s cubic-bezier(.22,1,.36,1),
+    background 0.45s ease !important;
+}
+
+
+/* subtle highlight when mouse enters row */
+.services .service-item:hover {
+  transform: translateX(8px) !important;
+  padding-left: 14px !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.32),
+      rgba(255,255,255,0)
+    ) !important;
+}
+
+
+/* number animation */
+.services .service-number {
+  transition:
+    transform 0.4s ease,
+    color 0.3s ease !important;
+}
+
+.services .service-item:hover .service-number {
+  transform: translateX(4px);
+  color: #68766f !important;
+}
+
+
+/* title animation */
+.services .service-item h3 {
+  transition:
+    transform 0.4s cubic-bezier(.22,1,.36,1),
+    color 0.3s ease !important;
+}
+
+.services .service-item:hover h3 {
+  transform: translateX(4px);
+  color: #111512 !important;
+}
+
+
+/* description becomes slightly clearer */
+.services .service-item p {
+  transition:
+    opacity 0.35s ease,
+    transform 0.4s ease !important;
+}
+
+.services .service-item:hover p {
+  opacity: 1 !important;
+  transform: translateX(4px);
+}
+
+
+/* arrow animation */
+.services .service-arrow {
+  transition:
+    transform 0.45s cubic-bezier(.22,1,.36,1),
+    opacity 0.3s ease !important;
+}
+
+.services .service-item:hover .service-arrow {
+  transform: translate(6px, -6px) !important;
+  opacity: 1 !important;
+}
+
+
+/* ---------------------------------------------------------
+   3. EXPERIENCE — PREMIUM MOUSE HOVER
+   --------------------------------------------------------- */
+
+.experience .experience-item {
+  position: relative;
+  transition:
+    transform 0.45s cubic-bezier(.22,1,.36,1),
+    padding-left 0.45s cubic-bezier(.22,1,.36,1),
+    background 0.45s ease !important;
+}
+
+
+/* row movement */
+.experience .experience-item:hover {
+  transform: translateX(8px) !important;
+  padding-left: 14px !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.30),
+      rgba(255,255,255,0)
+    ) !important;
+}
+
+
+/* date */
+.experience .experience-date {
+  transition:
+    transform 0.4s ease,
+    color 0.3s ease !important;
+}
+
+.experience .experience-item:hover .experience-date {
+  transform: translateX(4px);
+  color: #68766f !important;
+}
+
+
+/* role */
+.experience .experience-role {
+  transition: transform 0.4s ease !important;
+}
+
+.experience .experience-item:hover .experience-role {
+  transform: translateX(4px);
+}
+
+
+/* job title */
+.experience .experience-role h3 {
+  transition:
+    transform 0.4s ease,
+    color 0.3s ease !important;
+}
+
+.experience .experience-item:hover .experience-role h3 {
+  color: #111512 !important;
+}
+
+
+/* company */
+.experience .experience-role span {
+  transition: color 0.3s ease !important;
+}
+
+.experience .experience-item:hover .experience-role span {
+  color: #68766f !important;
+}
+
+
+/* description */
+.experience .experience-item > p {
+  transition:
+    opacity 0.35s ease,
+    transform 0.4s ease !important;
+}
+
+.experience .experience-item:hover > p {
+  opacity: 1 !important;
+  transform: translateX(4px);
+}
+
+
+/* ---------------------------------------------------------
+   4. KEEP REVEAL ANIMATION — BUT DON'T LET IT FADE ON HOVER
+   --------------------------------------------------------- */
+
+.services .service-item.reveal,
+.experience .experience-item.reveal {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.services .service-item.reveal.visible,
+.experience .experience-item.reveal.visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+
+/* ---------------------------------------------------------
+   5. SMOOTH CURSOR FEEL
+   --------------------------------------------------------- */
+
+.services .service-item,
+.experience .experience-item,
+.main-nav a {
+  cursor: pointer;
+}
+
+
+/* ---------------------------------------------------------
+   6. MOBILE — DON'T MOVE ROWS TOO MUCH
+   --------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+  .services .service-item:hover,
+  .experience .experience-item:hover {
+    transform: translateX(3px) !important;
+    padding-left: 5px !important;
+  }
+
+}
