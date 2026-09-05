@@ -2937,3 +2937,66 @@ header {
   padding-top: 70px !important;
   padding-bottom: 80px !important;
 }
+/* =========================================================
+   SERVICES — TIGHT EDITORIAL LAYOUT
+   ========================================================= */
+
+.services-list {
+  margin-top: 30px !important;
+  padding: 0 !important;
+}
+
+/* Force each service row to be compact */
+.services-list .service-item {
+  display: grid !important;
+  grid-template-columns: 70px 1fr 40px !important;
+  align-items: center !important;
+
+  min-height: 0 !important;
+  height: auto !important;
+
+  padding: 26px 0 !important;
+  margin: 0 !important;
+}
+
+/* First and last row */
+.services-list .service-item:first-child {
+  padding-top: 22px !important;
+}
+
+.services-list .service-item:last-child {
+  padding-bottom: 22px !important;
+}
+
+/* Service title */
+.services-list .service-item h3 {
+  margin: 0 0 7px 0 !important;
+  line-height: 1.1 !important;
+}
+
+/* Description */
+.services-list .service-item p {
+  margin: 0 !important;
+  line-height: 1.45 !important;
+}
+
+/* Number */
+.services-list .service-item > :first-child {
+  align-self: center !important;
+}
+
+/* Arrow */
+.services-list .service-item > :last-child {
+  align-self: center !important;
+}
+
+/* Reduce gap after heading */
+.services .section-heading {
+  margin-bottom: 25px !important;
+}
+
+/* Overall section */
+.services {
+  padding-top: 55px !important;
+  padding-bottom: 55px !important;
+}
