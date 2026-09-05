@@ -764,39 +764,25 @@ document.querySelectorAll(".selected-post .post-open").forEach((button) => {
   });
 });
 /* =========================================================
-   SELECTED WORK — READ SAMPLE FINAL FIX
+   SELECTED WORK — READ SAMPLE
    ========================================================= */
 
-document.addEventListener(
-  "click",
-  function (event) {
-    const button = event.target.closest(
-      ".selected-post .post-open"
-    );
+document.querySelectorAll(".selected-post .post-open").forEach((button) => {
+  button.addEventListener("click", function (event) {
+    event.preventDefault();
+    event.stopPropagation();
 
-    if (!button) return;
-
-    const post = button.closest(".selected-post");
+    const post = this.closest(".selected-post");
 
     if (!post) return;
 
-    const image = post.querySelector(
-      ".selected-post-image"
-    );
+    const image = post.querySelector(".selected-post-image");
 
     if (!image) return;
-
-    /*
-      Stop the old modal listener before it can open.
-    */
-    event.preventDefault();
-    event.stopPropagation();
-    event.stopImmediatePropagation();
 
     image.scrollIntoView({
       behavior: "smooth",
       block: "center"
     });
-  },
-  true
-);
+  });
+});
