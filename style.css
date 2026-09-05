@@ -4153,8 +4153,17 @@ section,
 .footer-socials a:hover {
   transform: translateY(-3px);
 }
+/* LINKEDIN FOOTER ICON — FINAL */
+.footer-socials svg {
+  width: 18px !important;
+  height: 18px !important;
+  display: block !important;
+  fill: #111512 !important;
+  opacity: 0.72;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
 
-.footer-socials a:hover img {
+.footer-socials a:hover svg {
+  transform: translateY(-3px) scale(1.08);
   opacity: 1;
-  transform: scale(1.08);
 }
