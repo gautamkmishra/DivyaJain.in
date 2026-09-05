@@ -4097,3 +4097,24 @@ section,
   opacity: 1 !important;
   visibility: visible !important;
 }
+/* =========================================
+   FINAL FIX — ACHIEVEMENT LABELS
+   ========================================= */
+
+.achievements .achievement > span {
+  display: block !important;
+  color: #111512 !important;
+  -webkit-text-fill-color: #111512 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+.achievements .achievement > span::before,
+.achievements .achievement > span::after {
+  color: #111512 !important;
+  -webkit-text-fill-color: #111512 !important;
+}
