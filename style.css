@@ -2075,3 +2075,123 @@ a {
     width: calc(100% - 32px);
   }
 }
+/* =========================================================
+   FINAL — CENTERED WEBSITE CONTENT FRAME
+   Keep background full-screen, constrain the actual content
+========================================================= */
+
+:root {
+  --content-width: 1080px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header-inner {
+  width: min(var(--content-width), calc(100% - 64px)) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero-inner {
+  width: min(var(--content-width), calc(100% - 64px)) !important;
+  max-width: var(--content-width) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+
+/* =========================
+   ALL MAIN SECTIONS
+========================= */
+
+.section-heading,
+.about-grid,
+.about-stats,
+.services-list,
+.work-intro,
+.work-secondary-grid,
+.case-intro,
+.case-grid,
+.achievement-intro,
+.achievement-grid,
+.experience-list,
+.tools-intro,
+.tools-grid,
+.testimonial-grid,
+.contact-inner {
+  width: min(var(--content-width), calc(100% - 64px)) !important;
+  max-width: var(--content-width) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+
+/* =========================
+   HERO TITLE
+========================= */
+
+.hero-title {
+  max-width: 1000px !important;
+}
+
+
+/* =========================
+   WORK FEATURE
+========================= */
+
+.work-feature {
+  width: min(var(--content-width), calc(100% - 64px)) !important;
+  max-width: var(--content-width) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-inner {
+  width: min(var(--content-width), calc(100% - 64px)) !important;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  :root {
+    --content-width: 100%;
+  }
+
+  .header-inner,
+  .hero-inner,
+  .section-heading,
+  .about-grid,
+  .about-stats,
+  .services-list,
+  .work-intro,
+  .work-feature,
+  .work-secondary-grid,
+  .case-intro,
+  .case-grid,
+  .achievement-intro,
+  .achievement-grid,
+  .experience-list,
+  .tools-intro,
+  .tools-grid,
+  .testimonial-grid,
+  .contact-inner {
+    width: calc(100% - 32px) !important;
+    max-width: none !important;
+  }
+}
