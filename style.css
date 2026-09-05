@@ -2791,3 +2791,114 @@ a:hover {
   background: rgba(202, 161, 111, 0.28);
   color: #fff8ef;
 }
+/* =========================================================
+   FINAL ATMOSPHERIC BACKGROUND POLISH
+   ========================================================= */
+
+body {
+  background:
+    radial-gradient(
+      700px 500px at 82% 18%,
+      rgba(184, 137, 88, 0.20),
+      transparent 68%
+    ),
+    radial-gradient(
+      600px 500px at 8% 72%,
+      rgba(126, 83, 48, 0.13),
+      transparent 70%
+    ),
+    radial-gradient(
+      500px 400px at 48% 48%,
+      rgba(92, 63, 40, 0.10),
+      transparent 72%
+    ),
+    linear-gradient(
+      120deg,
+      #100d0b 0%,
+      #17120f 35%,
+      #211810 67%,
+      #120f0d 100%
+    );
+}
+
+/* Softer, less obvious grid */
+body::after {
+  background-image:
+    linear-gradient(
+      rgba(214, 183, 143, 0.022) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(214, 183, 143, 0.022) 1px,
+      transparent 1px
+    );
+
+  background-size: 140px 140px;
+  opacity: 0.7;
+}
+
+/* Atmospheric light — like soft light falling into the page */
+body::before {
+  background:
+    radial-gradient(
+      ellipse 500px 380px at 86% 16%,
+      rgba(215, 170, 112, 0.11),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 420px 500px at 12% 82%,
+      rgba(155, 103, 61, 0.07),
+      transparent 70%
+    );
+
+  filter: blur(10px);
+}
+
+/* Header should blend into the background */
+header {
+  background: rgba(16, 13, 11, 0.42) !important;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border-bottom: 1px solid rgba(214, 183, 143, 0.08) !important;
+}
+
+/* Hero gets its own subtle depth */
+.hero {
+  background:
+    radial-gradient(
+      ellipse 520px 420px at 84% 40%,
+      rgba(201, 157, 102, 0.10),
+      transparent 72%
+    ) !important;
+}
+
+/* Remove the stronger previous hero glow */
+.hero::after {
+  opacity: 0.55;
+}
+
+/* Warm premium borders */
+.section-heading,
+.work-feature,
+.post-card,
+.case-card,
+.achievement,
+.tool,
+.testimonial {
+  border-color: rgba(214, 183, 143, 0.11) !important;
+}
+
+/* More refined card background */
+.post-card,
+.case-card,
+.achievement,
+.tool,
+.testimonial {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.028),
+      rgba(255,255,255,0.008)
+    ) !important;
+}
