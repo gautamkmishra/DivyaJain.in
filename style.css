@@ -3108,3 +3108,317 @@ header {
   padding-top: 55px !important;
   padding-bottom: 55px !important;
 }
+/* =========================================================
+   DIVYA JAIN — LIGHT EDITORIAL BACKGROUND
+   Dark-mode ready color system
+   ========================================================= */
+
+:root {
+  /* LIGHT MODE */
+  --bg-main: #f3f7f4;
+  --bg-surface: rgba(255, 255, 255, 0.58);
+  --bg-header: rgba(243, 247, 244, 0.82);
+
+  --text-main: #111512;
+  --text-soft: #4e5752;
+  --text-muted: #707873;
+
+  --line: rgba(25, 35, 30, 0.12);
+  --line-soft: rgba(25, 35, 30, 0.07);
+
+  --accent: #1d2722;
+  --accent-soft: #68766f;
+
+  --grid: rgba(50, 70, 60, 0.075);
+  --glow: rgba(190, 210, 198, 0.35);
+}
+
+
+/* =========================================================
+   MAIN PAGE BACKGROUND
+   ========================================================= */
+
+html {
+  background: var(--bg-main) !important;
+}
+
+body {
+  color: var(--text-main) !important;
+
+  background:
+    radial-gradient(
+      600px 500px at 50% 10%,
+      rgba(220, 231, 224, 0.72),
+      transparent 72%
+    ),
+    radial-gradient(
+      500px 500px at 88% 35%,
+      rgba(211, 224, 216, 0.38),
+      transparent 72%
+    ),
+    radial-gradient(
+      550px 500px at 10% 75%,
+      rgba(215, 227, 219, 0.32),
+      transparent 72%
+    ),
+    linear-gradient(
+      135deg,
+      #f5f8f6 0%,
+      #eef4f0 48%,
+      #f4f7f5 100%
+    ) !important;
+
+  background-attachment: fixed !important;
+}
+
+
+/* =========================================================
+   FINE EDITORIAL GRID — LIKE REFERENCE
+   ========================================================= */
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+  z-index: 0;
+
+  background-image:
+    linear-gradient(
+      to right,
+      var(--grid) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      var(--grid) 1px,
+      transparent 1px
+    );
+
+  background-size: 62px 62px;
+
+  opacity: 0.72;
+}
+
+
+/* =========================================================
+   SOFT CENTRAL ATMOSPHERIC GLOW
+   ========================================================= */
+
+body::before {
+  content: "";
+  position: fixed;
+
+  width: 650px;
+  height: 650px;
+
+  left: 50%;
+  top: 22%;
+
+  transform: translate(-50%, -50%);
+
+  background:
+    radial-gradient(
+      circle,
+      var(--glow) 0%,
+      rgba(210, 225, 216, 0.16) 32%,
+      transparent 70%
+    );
+
+  filter: blur(25px);
+
+  pointer-events: none;
+  z-index: 0;
+
+  opacity: 0.75;
+}
+
+
+/* =========================================================
+   KEEP CONTENT ABOVE BACKGROUND
+   ========================================================= */
+
+header,
+main,
+footer,
+section {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header {
+  background: var(--bg-header) !important;
+
+  border-bottom: 1px solid var(--line-soft) !important;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* =========================================================
+   TEXT
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-main) !important;
+}
+
+p {
+  color: var(--text-soft) !important;
+}
+
+.section-number,
+.section-eyebrow,
+.eyebrow {
+  color: var(--accent-soft) !important;
+}
+
+
+/* =========================================================
+   SECTION LINES
+   ========================================================= */
+
+.section-heading,
+.services-list,
+.experience-list {
+  border-color: var(--line) !important;
+}
+
+
+/* =========================================================
+   SERVICE / EXPERIENCE ROWS
+   ========================================================= */
+
+.service-item,
+.experience-item {
+  border-color: var(--line) !important;
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.post-card,
+.case-card,
+.achievement-card,
+.testimonial-card,
+.tool {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.60),
+      rgba(240, 246, 242, 0.42)
+    ) !important;
+
+  border-color: var(--line) !important;
+
+  box-shadow:
+    0 12px 40px rgba(40, 55, 47, 0.045) !important;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+button,
+.btn,
+.hero-cta,
+.contact-btn {
+  border-color: var(--line) !important;
+}
+
+
+/* =========================================================
+   LINKS / HOVER
+   ========================================================= */
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: var(--accent-soft);
+}
+
+
+/* =========================================================
+   HERO ATMOSPHERE
+   ========================================================= */
+
+.hero {
+  background:
+    radial-gradient(
+      500px 400px at 50% 30%,
+      rgba(215, 228, 219, 0.40),
+      transparent 75%
+    ) !important;
+}
+
+
+/* =========================================================
+   SECTIONS — NO SOLID DARK BACKGROUNDS
+   ========================================================= */
+
+section,
+.about,
+.services,
+.work,
+.case-studies,
+.achievements,
+.experience,
+.tools,
+.testimonials,
+.contact {
+  background: transparent !important;
+}
+
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+  background: rgba(95, 112, 103, 0.22);
+  color: var(--text-main);
+}
+
+
+/* =========================================================
+   FUTURE DARK MODE
+   ---------------------------------------------------------
+   Isko abhi activate nahi karna.
+   Baad mein JS toggle ke saath use karenge.
+   ========================================================= */
+
+[data-theme="dark"] {
+  --bg-main: #111310;
+  --bg-surface: rgba(25, 28, 25, 0.70);
+  --bg-header: rgba(17, 19, 16, 0.84);
+
+  --text-main: #eeeae1;
+  --text-soft: #b7b9b2;
+  --text-muted: #858a83;
+
+  --line: rgba(235, 235, 225, 0.13);
+  --line-soft: rgba(235, 235, 225, 0.07);
+
+  --accent: #e8e5dc;
+  --accent-soft: #b8c0b8;
+
+  --grid: rgba(220, 225, 218, 0.055);
+  --glow: rgba(120, 145, 130, 0.18);
+}
