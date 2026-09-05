@@ -1,241 +1,150 @@
 /* =========================================================
-   DIVYA JAIN — PORTFOLIO
-   Main JavaScript
-   ========================================================= */
+   DIVYA JAIN — PORTFOLIO INTERACTIONS
+========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
-       01. SCROLL REVEAL
+       PAGE LOAD
+    ===================================================== */
+
+    window.setTimeout(() => {
+        document.body.classList.add("page-loaded");
+    }, 80);
+
+
+    /* =====================================================
+       SCROLL REVEAL
     ===================================================== */
 
     const revealElements = document.querySelectorAll(
-        ".section > *, .service-item, .work-card, .case-study, .achievement, .experience-item, .tool"
+        ".section-label, .about-grid, .stats-grid, " +
+        ".services-heading, .service-item, " +
+        ".work-heading, .work-card, " +
+        ".case-heading, .case-study, " +
+        ".achievements-heading, .achievement, " +
+        ".experience-heading, .experience-item, " +
+        ".tools-heading, .tool, " +
+        ".testimonial, .contact-content"
     );
+
+    revealElements.forEach((element) => {
+        element.classList.add("reveal");
+    });
+
 
     const revealObserver = new IntersectionObserver(
         (entries, observer) => {
 
             entries.forEach((entry) => {
 
-                if (!entry.isIntersecting) return;
+                if (entry.isIntersecting) {
 
-                entry.target.classList.add("is-visible");
+                    entry.target.classList.add("is-visible");
 
-                observer.unobserve(entry.target);
+                    observer.unobserve(entry.target);
+                }
 
             });
 
         },
         {
-            threshold: 0.08,
+            threshold: 0.12,
             rootMargin: "0px 0px -50px 0px"
         }
     );
 
 
     revealElements.forEach((element) => {
-        element.classList.add("reveal");
         revealObserver.observe(element);
     });
 
 
     /* =====================================================
-       02. ACTIVE NAVIGATION
+       STAGGERED REVEALS
     ===================================================== */
 
-    const sections = document.querySelectorAll("main section[id]");
-    const navLinks = document.querySelectorAll(".desktop-nav a");
-
-    const updateActiveNavigation = () => {
-
-        let currentSection = "";
-
-        sections.forEach((section) => {
-
-            const sectionTop = section.offsetTop - 180;
-            const sectionHeight = section.offsetHeight;
-
-            if (
-                window.scrollY >= sectionTop &&
-                window.scrollY < sectionTop + sectionHeight
-            ) {
-                currentSection = section.getAttribute("id");
-            }
-
-        });
+    const staggerGroups = [
+        ".service-item",
+        ".work-card",
+        ".case-study",
+        ".achievement",
+        ".experience-item",
+        ".tool"
+    ];
 
 
-        navLinks.forEach((link) => {
+    staggerGroups.forEach((selector) => {
 
-            const href = link.getAttribute("href");
+        const elements = document.querySelectorAll(selector);
 
-            link.classList.remove("active");
+        elements.forEach((element, index) => {
 
-            if (href === `#${currentSection}`) {
-                link.classList.add("active");
-            }
+            element.style.transitionDelay =
+                `${Math.min(index * 70, 350)}ms`;
 
         });
 
-    };
-
-
-    window.addEventListener(
-        "scroll",
-        updateActiveNavigation,
-        { passive: true }
-    );
-
-    updateActiveNavigation();
+    });
 
 
     /* =====================================================
-       03. ANIMATED ACHIEVEMENT NUMBERS
-       ===================================================== */
+       ACTIVE NAVIGATION
+    ===================================================== */
 
-    const numberElements = document.querySelectorAll(
-        ".achievement strong"
+    const navigationLinks =
+        document.querySelectorAll(".desktop-nav a");
+
+    const sections = document.querySelectorAll(
+        "main section[id]"
     );
 
 
-    const animateNumber = (element) => {
-
-        const targetText = element.textContent.trim();
-
-        /*
-         * Only animate actual numerical values.
-         * Placeholder values such as "—" are ignored.
-         */
-
-        if (!/\d/.test(targetText)) {
-            return;
-        }
-
-        const match = targetText.match(
-            /^([^\d]*)([\d,.]+)(.*)$/
-        );
-
-        if (!match) return;
-
-        const prefix = match[1];
-        const number = parseFloat(
-            match[2].replace(/,/g, "")
-        );
-        const suffix = match[3];
-
-        if (Number.isNaN(number)) return;
-
-        const duration = 1500;
-        const startTime = performance.now();
-
-
-        const updateNumber = (currentTime) => {
-
-            const elapsed = currentTime - startTime;
-
-            const progress = Math.min(
-                elapsed / duration,
-                1
-            );
-
-            /*
-             * Smooth ease-out curve
-             */
-
-            const easedProgress =
-                1 - Math.pow(1 - progress, 3);
-
-            const currentValue =
-                number * easedProgress;
-
-
-            element.textContent =
-                prefix +
-                Math.floor(currentValue).toLocaleString("en-IN") +
-                suffix;
-
-
-            if (progress < 1) {
-                requestAnimationFrame(updateNumber);
-            } else {
-                element.textContent =
-                    prefix +
-                    number.toLocaleString("en-IN") +
-                    suffix;
-            }
-
-        };
-
-
-        requestAnimationFrame(updateNumber);
-
-    };
-
-
-    const numberObserver = new IntersectionObserver(
-        (entries, observer) => {
+    const navObserver = new IntersectionObserver(
+        (entries) => {
 
             entries.forEach((entry) => {
 
-                if (!entry.isIntersecting) return;
+                if (!entry.isIntersecting) {
+                    return;
+                }
 
-                animateNumber(entry.target);
+                const currentId = entry.target.id;
 
-                observer.unobserve(entry.target);
+                navigationLinks.forEach((link) => {
+
+                    const href =
+                        link.getAttribute("href");
+
+                    link.classList.toggle(
+                        "active",
+                        href === `#${currentId}`
+                    );
+
+                });
 
             });
 
         },
         {
-            threshold: 0.6
+            rootMargin: "-35% 0px -55% 0px",
+            threshold: 0
         }
     );
 
 
-    numberElements.forEach((element) => {
-        numberObserver.observe(element);
+    sections.forEach((section) => {
+        navObserver.observe(section);
     });
 
 
     /* =====================================================
-       04. HEADER SCROLL STATE
+       SMOOTH INTERNAL LINKS
     ===================================================== */
 
-    const header = document.querySelector(".site-header");
-
-    const handleHeaderScroll = () => {
-
-        if (!header) return;
-
-        if (window.scrollY > 30) {
-            header.classList.add("scrolled");
-        } else {
-            header.classList.remove("scrolled");
-        }
-
-    };
-
-
-    window.addEventListener(
-        "scroll",
-        handleHeaderScroll,
-        { passive: true }
-    );
-
-    handleHeaderScroll();
-
-
-    /* =====================================================
-       05. SMOOTH INTERNAL LINKS
-    ===================================================== */
-
-    const internalLinks = document.querySelectorAll(
+    document.querySelectorAll(
         'a[href^="#"]'
-    );
-
-
-    internalLinks.forEach((link) => {
+    ).forEach((link) => {
 
         link.addEventListener("click", (event) => {
 
@@ -253,22 +162,17 @@ document.addEventListener("DOMContentLoaded", () => {
             const target =
                 document.querySelector(targetId);
 
-            if (!target) return;
+            if (!target) {
+                return;
+            }
+
 
             event.preventDefault();
 
 
-            const headerOffset = 100;
-
-            const targetPosition =
-                target.getBoundingClientRect().top +
-                window.scrollY -
-                headerOffset;
-
-
-            window.scrollTo({
-                top: targetPosition,
-                behavior: "smooth"
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
             });
 
         });
@@ -277,27 +181,75 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       06. TOOL HOVER INTERACTION
+       HEADER SCROLL STATE
     ===================================================== */
 
-    const tools = document.querySelectorAll(".tool");
+    const header =
+        document.querySelector(".site-header");
+
+
+    const updateHeader = () => {
+
+        if (!header) {
+            return;
+        }
+
+        if (window.scrollY > 40) {
+
+            header.classList.add(
+                "is-scrolled"
+            );
+
+        } else {
+
+            header.classList.remove(
+                "is-scrolled"
+            );
+
+        }
+
+    };
+
+
+    updateHeader();
+
+    window.addEventListener(
+        "scroll",
+        updateHeader,
+        { passive: true }
+    );
+
+
+    /* =====================================================
+       TOOL HOVER
+    ===================================================== */
+
+    const tools =
+        document.querySelectorAll(".tool");
 
 
     tools.forEach((tool) => {
 
-        tool.addEventListener("mouseenter", () => {
-            tool.classList.add("tool-hover");
-        });
+        tool.addEventListener(
+            "mouseenter",
+            () => {
+                tool.classList.add("is-hovered");
+            }
+        );
 
-        tool.addEventListener("mouseleave", () => {
-            tool.classList.remove("tool-hover");
-        });
+
+        tool.addEventListener(
+            "mouseleave",
+            () => {
+                tool.classList.remove("is-hovered");
+            }
+        );
 
     });
 
 
     /* =====================================================
-       07. WORK CARD PARALLAX
+       WORK CARD MOUSE MOVEMENT
     ===================================================== */
 
     const workCards =
@@ -306,97 +258,274 @@ document.addEventListener("DOMContentLoaded", () => {
 
     workCards.forEach((card) => {
 
-        const visual =
-            card.querySelector(".work-placeholder");
+        card.addEventListener(
+            "mousemove",
+            (event) => {
 
-        if (!visual) return;
-
-
-        card.addEventListener("mousemove", (event) => {
-
-            const rect =
-                card.getBoundingClientRect();
-
-            const x =
-                event.clientX - rect.left;
-
-            const y =
-                event.clientY - rect.top;
+                if (
+                    window.matchMedia(
+                        "(max-width: 760px)"
+                    ).matches
+                ) {
+                    return;
+                }
 
 
-            const rotateX =
-                ((y / rect.height) - 0.5) * -2;
-
-            const rotateY =
-                ((x / rect.width) - 0.5) * 2;
+                const rect =
+                    card.getBoundingClientRect();
 
 
-            card.style.transform =
-                `perspective(900px)
-                 rotateX(${rotateX}deg)
-                 rotateY(${rotateY}deg)
-                 translateY(-6px)`;
+                const x =
+                    event.clientX - rect.left;
 
-        });
+                const y =
+                    event.clientY - rect.top;
 
 
-        card.addEventListener("mouseleave", () => {
+                const rotateX =
+                    ((y / rect.height) - 0.5) * -2;
 
-            card.style.transform = "";
-
-        });
-
-    });
+                const rotateY =
+                    ((x / rect.width) - 0.5) * 2;
 
 
-    /* =====================================================
-       08. MAGNETIC PRIMARY LINKS
-    ===================================================== */
+                card.style.transform =
+                    `perspective(900px)
+                     rotateX(${rotateX}deg)
+                     rotateY(${rotateY}deg)
+                     translateY(-5px)`;
 
-    const magneticLinks =
-        document.querySelectorAll(
-            ".primary-link, .header-cta, .contact-email"
+            }
         );
 
 
-    magneticLinks.forEach((link) => {
+        card.addEventListener(
+            "mouseleave",
+            () => {
 
-        link.addEventListener("mousemove", (event) => {
+                card.style.transform = "";
 
-            const rect =
-                link.getBoundingClientRect();
-
-            const x =
-                event.clientX - rect.left - rect.width / 2;
-
-            const y =
-                event.clientY - rect.top - rect.height / 2;
-
-
-            link.style.transform =
-                `translate(${x * 0.08}px, ${y * 0.08}px)`;
-
-        });
-
-
-        link.addEventListener("mouseleave", () => {
-
-            link.style.transform = "";
-
-        });
+            }
+        );
 
     });
 
 
     /* =====================================================
-       09. PAGE LOADED
+       MAGNETIC LINKS
     ===================================================== */
 
-    document.body.classList.add("page-loaded");
+    const magneticElements =
+        document.querySelectorAll(
+            ".header-cta, .primary-link, .text-link"
+        );
+
+
+    magneticElements.forEach((element) => {
+
+        element.addEventListener(
+            "mousemove",
+            (event) => {
+
+                if (
+                    window.matchMedia(
+                        "(max-width: 760px)"
+                    ).matches
+                ) {
+                    return;
+                }
+
+
+                const rect =
+                    element.getBoundingClientRect();
+
+
+                const x =
+                    event.clientX -
+                    rect.left -
+                    rect.width / 2;
+
+
+                const y =
+                    event.clientY -
+                    rect.top -
+                    rect.height / 2;
+
+
+                element.style.transform =
+                    `translate(${x * 0.08}px,
+                               ${y * 0.08}px)`;
+
+            }
+        );
+
+
+        element.addEventListener(
+            "mouseleave",
+            () => {
+
+                element.style.transform = "";
+
+            }
+        );
+
+    });
 
 
     /* =====================================================
-       10. CONSOLE MESSAGE
+       SERVICE HOVER NUMBER
+    ===================================================== */
+
+    const serviceItems =
+        document.querySelectorAll(
+            ".service-item"
+        );
+
+
+    serviceItems.forEach((item) => {
+
+        const number =
+            item.querySelector(".service-number");
+
+
+        item.addEventListener(
+            "mouseenter",
+            () => {
+
+                if (!number) {
+                    return;
+                }
+
+                number.style.color =
+                    "#f1f0ec";
+
+            }
+        );
+
+
+        item.addEventListener(
+            "mouseleave",
+            () => {
+
+                if (!number) {
+                    return;
+                }
+
+                number.style.color = "";
+
+            }
+        );
+
+    });
+
+
+    /* =====================================================
+       EXTERNAL LINKS
+    ===================================================== */
+
+    document.querySelectorAll(
+        'a[target="_blank"]'
+    ).forEach((link) => {
+
+        link.setAttribute(
+            "rel",
+            "noopener noreferrer"
+        );
+
+    });
+
+
+    /* =====================================================
+       EMAIL LINK
+    ===================================================== */
+
+    const emailLink =
+        document.querySelector(
+            '.contact-email[href^="mailto:"]'
+        );
+
+
+    if (emailLink) {
+
+        emailLink.addEventListener(
+            "click",
+            () => {
+
+                emailLink.classList.add(
+                    "is-clicked"
+                );
+
+
+                window.setTimeout(() => {
+
+                    emailLink.classList.remove(
+                        "is-clicked"
+                    );
+
+                }, 500);
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       BACK TO TOP
+    ===================================================== */
+
+    const backToTop =
+        document.querySelector(
+            '.site-footer a[href="#home"]'
+        );
+
+
+    if (backToTop) {
+
+        backToTop.addEventListener(
+            "click",
+            (event) => {
+
+                event.preventDefault();
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       REDUCED MOTION SUPPORT
+    ===================================================== */
+
+    const prefersReducedMotion =
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        );
+
+
+    if (prefersReducedMotion.matches) {
+
+        document
+            .querySelectorAll(".reveal")
+            .forEach((element) => {
+
+                element.classList.add(
+                    "is-visible"
+                );
+
+            });
+
+    }
+
+
+    /* =====================================================
+       CONSOLE
     ===================================================== */
 
     console.log(
