@@ -764,29 +764,6 @@ document.querySelectorAll(".selected-post .post-open").forEach((button) => {
   });
 });
 /* =========================================================
-   SELECTED WORK — READ SAMPLE SCROLL FIX
-   ========================================================= */
-
-document.querySelectorAll(".selected-post .post-open").forEach((button) => {
-  button.addEventListener("click", function (event) {
-    event.preventDefault();
-    event.stopImmediatePropagation();
-
-    const post = this.closest(".selected-post");
-
-    if (!post) return;
-
-    const image = post.querySelector(".selected-post-image");
-
-    if (!image) return;
-
-    image.scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
-  });
-});
-/* =========================================================
    SELECTED WORK — READ SAMPLE FINAL FIX
    ========================================================= */
 
