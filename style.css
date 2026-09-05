@@ -2195,3 +2195,301 @@ a {
     max-width: none !important;
   }
 }
+/* =========================================================
+   PREMIUM WARM EDITORIAL BACKGROUND
+   ========================================================= */
+
+:root {
+  --bg-main: #171411;
+  --bg-deep: #100e0c;
+  --warm-brown: #3a2b20;
+  --champagne: #c9a77b;
+  --cream: #eee5d8;
+  --muted-cream: #b9afa3;
+}
+
+/* Main page background */
+html {
+  background: var(--bg-main);
+}
+
+body {
+  background:
+    radial-gradient(
+      circle at 78% 8%,
+      rgba(139, 101, 65, 0.24) 0%,
+      rgba(139, 101, 65, 0.10) 20%,
+      transparent 43%
+    ),
+    radial-gradient(
+      circle at 12% 42%,
+      rgba(105, 72, 45, 0.16) 0%,
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 65% 72%,
+      rgba(116, 82, 51, 0.12) 0%,
+      transparent 38%
+    ),
+    linear-gradient(
+      135deg,
+      #100e0c 0%,
+      #171411 38%,
+      #1c1712 68%,
+      #120f0c 100%
+    );
+
+  color: var(--cream);
+}
+
+/* Soft atmospheric glow */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(202, 161, 111, 0.12),
+      transparent 22%
+    ),
+    radial-gradient(
+      circle at 18% 78%,
+      rgba(176, 126, 77, 0.08),
+      transparent 25%
+    );
+
+  opacity: 1;
+}
+
+/* Very subtle editorial grid */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(214, 183, 143, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(214, 183, 143, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 120px 120px;
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7),
+    transparent 85%
+  );
+}
+
+/* Keep actual website content above atmosphere */
+header,
+main,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Remove flat black section backgrounds */
+section,
+.hero,
+.about,
+.services,
+.work,
+.case-studies,
+.achievements,
+.experience,
+.tools,
+.testimonials,
+.contact {
+  background: transparent !important;
+}
+
+/* Premium section borders */
+.section {
+  border-color: rgba(210, 178, 137, 0.12);
+}
+
+/* Header */
+header {
+  background: rgba(16, 14, 12, 0.68) !important;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(214, 183, 143, 0.10);
+}
+
+/* Warm typography */
+h1,
+h2,
+h3,
+h4 {
+  color: var(--cream);
+}
+
+p {
+  color: var(--muted-cream);
+}
+
+/* Champagne accent text */
+.section-number,
+.eyebrow,
+.section-label,
+.work-label,
+.case-label {
+  color: var(--champagne);
+}
+
+/* Premium cards */
+.post-card,
+.case-card,
+.achievement,
+.tool,
+.testimonial,
+.stat-card {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.035),
+      rgba(255, 255, 255, 0.012)
+    ) !important;
+
+  border-color: rgba(214, 183, 143, 0.14) !important;
+}
+
+/* Card hover */
+.post-card:hover,
+.case-card:hover,
+.tool:hover,
+.testimonial:hover {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(202, 161, 111, 0.08),
+      rgba(255, 255, 255, 0.018)
+    ) !important;
+
+  border-color: rgba(202, 161, 111, 0.30) !important;
+}
+
+/* Tool icon containers */
+.tool-icon {
+  background: rgba(255, 255, 255, 0.025) !important;
+  border-color: rgba(214, 183, 143, 0.16) !important;
+}
+
+/* Buttons */
+button,
+.btn,
+a[class*="button"],
+a[class*="btn"] {
+  border-color: rgba(202, 161, 111, 0.42);
+}
+
+button:hover,
+.btn:hover,
+a[class*="button"]:hover,
+a[class*="btn"]:hover {
+  background: rgba(202, 161, 111, 0.10);
+  border-color: rgba(202, 161, 111, 0.65);
+}
+
+/* Links */
+a {
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+a:hover {
+  color: #e1c49b;
+}
+
+/* Subtle warm glow around major hero area */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  right: -180px;
+  top: 40px;
+
+  background: radial-gradient(
+    circle,
+    rgba(184, 132, 80, 0.13) 0%,
+    rgba(184, 132, 80, 0.05) 35%,
+    transparent 72%
+  );
+
+  filter: blur(12px);
+  pointer-events: none;
+}
+
+/* About / lower sections get slightly different atmosphere */
+.about,
+.work,
+.case-studies,
+.achievements,
+.experience,
+.tools,
+.testimonials {
+  position: relative;
+}
+
+.about::before,
+.work::before,
+.case-studies::before,
+.tools::before {
+  content: "";
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  left: -220px;
+  top: 10%;
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(117, 81, 49, 0.07),
+    transparent 70%
+  );
+
+  pointer-events: none;
+}
+
+/* Better horizontal separators */
+.marquee,
+.section-heading {
+  border-color: rgba(214, 183, 143, 0.12) !important;
+}
+
+/* Contact section */
+.contact {
+  background:
+    radial-gradient(
+      circle at 50% 70%,
+      rgba(158, 112, 69, 0.12),
+      transparent 42%
+    ) !important;
+}
+
+/* Selection colour */
+::selection {
+  background: rgba(202, 161, 111, 0.28);
+  color: #fff8ef;
+}
