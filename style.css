@@ -1944,3 +1944,134 @@ a {
   }
 
 }
+/* =========================================================
+   CENTERED CONTENT WIDTH — PREMIUM EDITORIAL LAYOUT
+========================================================= */
+
+/* Main content stays centered instead of stretching edge-to-edge */
+.hero-inner,
+.section-heading,
+.about-grid,
+.about-stats,
+.services-list,
+.work-intro,
+.work-secondary-grid,
+.case-intro,
+.case-grid,
+.achievement-intro,
+.achievement-grid,
+.experience-list,
+.tools-intro,
+.tools-grid,
+.testimonial-grid,
+.contact-inner {
+  width: min(1180px, calc(100% - 64px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hero gets a more controlled editorial width */
+.hero-inner {
+  max-width: 1180px;
+}
+
+/* Main section headings */
+.section-heading {
+  max-width: 1180px;
+}
+
+/* About */
+.about-grid {
+  max-width: 1050px;
+}
+
+.about-stats {
+  max-width: 1050px;
+}
+
+/* Services */
+.services-list {
+  max-width: 1050px;
+}
+
+/* Selected Work */
+.work-intro {
+  max-width: 1050px;
+}
+
+.work-secondary-grid {
+  max-width: 1050px;
+}
+
+/* Case Studies */
+.case-intro,
+.case-grid {
+  max-width: 1050px;
+}
+
+/* Achievements */
+.achievement-intro,
+.achievement-grid {
+  max-width: 1050px;
+}
+
+/* Experience */
+.experience-list {
+  max-width: 1050px;
+}
+
+/* Tools */
+.tools-intro,
+.tools-grid {
+  max-width: 1050px;
+}
+
+/* Testimonials */
+.testimonial-grid {
+  max-width: 1050px;
+}
+
+/* Contact */
+.contact-inner {
+  max-width: 1050px;
+}
+
+
+/* =========================================================
+   HERO — MORE CENTERED / LESS FULL-WIDTH
+========================================================= */
+
+.hero-inner {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.hero-title {
+  max-width: 1050px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .hero-inner,
+  .section-heading,
+  .about-grid,
+  .about-stats,
+  .services-list,
+  .work-intro,
+  .work-secondary-grid,
+  .case-intro,
+  .case-grid,
+  .achievement-intro,
+  .achievement-grid,
+  .experience-list,
+  .tools-intro,
+  .tools-grid,
+  .testimonial-grid,
+  .contact-inner {
+    width: calc(100% - 32px);
+  }
+}
