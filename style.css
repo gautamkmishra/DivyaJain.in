@@ -3000,3 +3000,63 @@ header {
   padding-top: 55px !important;
   padding-bottom: 55px !important;
 }
+/* =========================================================
+   SERVICES — FORCE COMPACT SPACING
+   ========================================================= */
+
+.services .services-list {
+  margin-top: 20px !important;
+  padding: 0 !important;
+}
+
+.services .services-list .service-item {
+  padding: 18px 0 !important;
+  margin: 0 !important;
+  min-height: unset !important;
+  height: auto !important;
+  gap: 0 !important;
+}
+
+.services .services-list .service-item > div {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.services .services-list .service-item h3 {
+  margin: 0 0 5px 0 !important;
+  padding: 0 !important;
+  line-height: 1.05 !important;
+}
+
+.services .services-list .service-item p {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.35 !important;
+}
+
+.services .services-list .service-number {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.services .services-list .service-arrow {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.services .services-list .service-item:first-child {
+  padding-top: 14px !important;
+}
+
+.services .services-list .service-item:last-child {
+  padding-bottom: 14px !important;
+}
+
+.services .section-heading {
+  margin-bottom: 15px !important;
+}
+
+.services {
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+}
