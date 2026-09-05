@@ -1848,3 +1848,99 @@ a {
     transform: none;
   }
 }
+/* =========================================================
+   POST MODAL — FINAL VISIBILITY FIX
+========================================================= */
+
+/* Modal is completely hidden until JavaScript opens it */
+.post-modal {
+  display: none !important;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Open modal */
+.post-modal.is-open {
+  display: flex !important;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+/* Every post is hidden by default */
+.post-modal .post-modal-content {
+  display: none !important;
+}
+
+
+/* Only the selected post is visible */
+.post-modal .post-modal-content.active {
+  display: block !important;
+}
+
+
+/* Proper modal positioning */
+.post-modal {
+  position: fixed !important;
+  inset: 0 !important;
+
+  z-index: 99999 !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 24px !important;
+
+  background: rgba(0, 0, 0, 0.82) !important;
+
+  backdrop-filter: blur(8px);
+}
+
+
+/* Modal box */
+.post-modal .post-modal-container {
+  position: relative !important;
+
+  width: min(920px, 100%) !important;
+  max-height: calc(100vh - 48px) !important;
+
+  overflow-y: auto !important;
+
+  background: #111 !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+
+  box-shadow:
+    0 35px 100px rgba(0, 0, 0, 0.75) !important;
+}
+
+
+/* Close button always visible */
+.post-modal .post-modal-close {
+  position: absolute !important;
+
+  top: 18px !important;
+  right: 18px !important;
+
+  z-index: 20 !important;
+
+  float: none !important;
+
+  margin: 0 !important;
+}
+
+
+/* Mobile modal */
+@media (max-width: 700px) {
+
+  .post-modal {
+    padding: 10px !important;
+  }
+
+  .post-modal .post-modal-container {
+    max-height: calc(100vh - 20px) !important;
+  }
+
+}
