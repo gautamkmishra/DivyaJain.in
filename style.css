@@ -5100,3 +5100,63 @@ footer a[href*="topmate"]:hover,
     font-size: 38px !important;
   }
 }
+/* =========================================================
+   CASE STUDIES — FIX CONTENT OVERFLOW
+   ========================================================= */
+
+/* Let the cards grow naturally with their content */
+.case-studies .case-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+}
+
+/* REMOVE the fixed height that was cutting the content */
+.case-studies .case-card,
+.case-studies .case-card-main {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}
+
+/* Keep all three cards equal in the same grid row */
+.case-studies .case-card {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Let the content determine the card height */
+.case-studies .case-details {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Result/outcome stays toward the bottom */
+.case-studies .case-details > .case-detail:last-child {
+  margin-top: auto !important;
+}
+
+/* Proper spacing before the next section */
+.case-studies {
+  margin-bottom: 110px !important;
+}
+
+@media (max-width: 900px) {
+  .case-studies .case-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .case-studies .case-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .case-studies .case-card {
+    height: auto !important;
+  }
+}
