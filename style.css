@@ -6781,3 +6781,40 @@ section.work .selected-post:hover .selected-post-image {
   }
 
 }
+/* =========================================================
+   SELECTED WORK — HEADING ALIGNMENT
+========================================================= */
+
+.work .section-heading {
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 24px !important;
+
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.work .section-heading .section-number {
+  flex: 0 0 auto !important;
+  margin: 0 !important;
+}
+
+.work .section-heading h2 {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Intro starts exactly from the same line as Excel */
+.work .work-intro {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  margin-top: 22px !important;
+}
+
+/* All post content stays on the same left axis */
+.work .selected-post-info,
+.work .selected-post-header,
+.work .selected-post-image {
+  margin-left: 0 !important;
+}
