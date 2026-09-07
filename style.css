@@ -7134,3 +7134,43 @@ section.work .selected-post-image img {
   }
 
 }
+/* =========================================================
+   SELECTED WORK — INTRO ALIGNMENT FIX
+========================================================= */
+
+section.work .work-intro {
+  width: calc(100% - 42px) !important;
+  max-width: 900px !important;
+
+  margin-top: 28px !important;
+  margin-left: 42px !important;
+  margin-right: auto !important;
+
+  padding: 0 !important;
+
+  text-align: left !important;
+}
+
+section.work .work-intro p {
+  width: 100% !important;
+  max-width: 760px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  text-align: left !important;
+}
+
+
+/* Mobile — don't keep the desktop offset */
+@media (max-width: 768px) {
+  section.work .work-intro {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  section.work .work-intro p {
+    max-width: 100% !important;
+  }
+}
