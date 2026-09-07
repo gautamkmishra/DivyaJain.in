@@ -6059,3 +6059,34 @@ footer a[href*="topmate"]:hover,
 
   text-align: left !important;
 }
+/* =========================================================
+   SELECTED WORK — INTRO TEXT WIDTH FIX
+   ========================================================= */
+
+.work .work-intro {
+  width: 100% !important;
+  max-width: 760px !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  text-align: left !important;
+}
+
+.work .work-intro p {
+  width: 100% !important;
+  max-width: 760px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: left !important;
+  line-height: 1.65 !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .work .work-intro {
+    max-width: 100% !important;
+  }
+
+  .work .work-intro p {
+    max-width: 100% !important;
+  }
+}
