@@ -5029,3 +5029,74 @@ footer a[href*="topmate"]:hover,
     height: auto !important;
   }
 }
+/* =========================================================
+   CASE STUDIES — BALANCED CARD CONTENT
+   ========================================================= */
+
+/* All three cards same height */
+.case-studies .case-card {
+  min-height: 690px !important;
+  height: 690px !important;
+  box-sizing: border-box !important;
+}
+
+/* First card heading was becoming too large */
+.case-studies .case-card-main h3,
+.case-studies .case-card-main .case-title {
+  font-size: clamp(34px, 3vw, 48px) !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.045em !important;
+}
+
+/* Keep all card titles visually consistent */
+.case-studies .case-card h3,
+.case-studies .case-card .case-title {
+  max-width: 100% !important;
+}
+
+/* Balance the internal spacing */
+.case-studies .case-card {
+  padding-top: 48px !important;
+  padding-bottom: 32px !important;
+}
+
+/* Don't let the details create uneven stretching */
+.case-studies .case-details {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Result/outcome stays toward the lower portion */
+.case-studies .case-details > .case-detail:last-child {
+  margin-top: auto !important;
+}
+
+/* Keep text comfortable inside each card */
+.case-studies .case-detail p,
+.case-studies .case-detail li {
+  line-height: 1.55 !important;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .case-studies .case-card {
+    height: auto !important;
+    min-height: 650px !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .case-studies .case-card {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  .case-studies .case-card-main h3,
+  .case-studies .case-card-main .case-title {
+    font-size: 38px !important;
+  }
+}
