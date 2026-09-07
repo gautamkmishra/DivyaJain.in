@@ -5890,3 +5890,150 @@ footer a[href*="topmate"]:hover,
     height: 28px !important;
   }
 }
+/* =========================================================
+   TOOLS & PLATFORMS — CLEAN ICON GRID
+   ========================================================= */
+
+.tools-grid {
+  display: grid !important;
+  grid-template-columns: repeat(8, 1fr) !important;
+  gap: 26px 42px !important;
+
+  width: min(1050px, calc(100% - 64px)) !important;
+  max-width: 1050px !important;
+
+  margin: 48px auto 0 !important;
+  padding: 0 !important;
+
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+
+/* Individual tool */
+.tools-grid .tool {
+  min-height: auto !important;
+  height: auto !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+
+  transform: none !important;
+}
+
+
+/* Icon */
+.tools-grid .tool .tool-icon {
+  width: 34px !important;
+  height: 34px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+
+  padding: 0 !important;
+  margin: 0 0 9px 0 !important;
+
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+
+  overflow: visible !important;
+}
+
+
+/* Actual logo */
+.tools-grid .tool .tool-icon img {
+  width: 30px !important;
+  height: 30px !important;
+
+  max-width: 30px !important;
+  max-height: 30px !important;
+
+  display: block !important;
+  object-fit: contain !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+/* Tool name — immediately below icon */
+.tools-grid .tool > span {
+  display: block !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  color: #59645f !important;
+
+  font-size: 10px !important;
+  line-height: 1.3 !important;
+  font-weight: 500 !important;
+
+  white-space: nowrap !important;
+}
+
+
+/* Remove hover card effect */
+.tools-grid .tool:hover {
+  background: transparent !important;
+  transform: none !important;
+}
+
+.tools-grid .tool:hover .tool-icon {
+  transform: translateY(-3px) !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .tools-grid {
+    grid-template-columns: repeat(6, 1fr) !important;
+    column-gap: 32px !important;
+    row-gap: 28px !important;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .tools-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    width: calc(100% - 32px) !important;
+    column-gap: 22px !important;
+    row-gap: 26px !important;
+    margin-top: 36px !important;
+  }
+
+  .tools-grid .tool .tool-icon {
+    width: 30px !important;
+    height: 30px !important;
+    margin-bottom: 7px !important;
+  }
+
+  .tools-grid .tool .tool-icon img {
+    width: 27px !important;
+    height: 27px !important;
+  }
+
+  .tools-grid .tool > span {
+    font-size: 9px !important;
+  }
+}
