@@ -7215,3 +7215,58 @@ section.work .work-intro p {
     white-space: normal !important;
   }
 }
+/* =========================================================
+   SELECTED WORK — POST META + IMAGE ALIGNMENT
+   Applies to POST 01 → POST 06
+========================================================= */
+
+/* Move the metadata line slightly to the right */
+section.work .selected-post-header {
+  padding-left: 48px !important;
+  padding-right: 0 !important;
+
+  white-space: nowrap !important;
+}
+
+/* Keep number + labels on ONE single line */
+section.work .selected-post-number,
+section.work .selected-post-meta,
+section.work .selected-post-meta span {
+  white-space: nowrap !important;
+}
+
+/* Move every post image by exactly the same amount */
+section.work .selected-post-image {
+  margin-left: 48px !important;
+  margin-right: auto !important;
+}
+
+/* Make sure the image doesn't break outside the section */
+section.work .selected-post-image img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  section.work .selected-post-header {
+    padding-left: 0 !important;
+    white-space: normal !important;
+  }
+
+  section.work .selected-post-image {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  section.work .selected-post-number,
+  section.work .selected-post-meta,
+  section.work .selected-post-meta span {
+    white-space: normal !important;
+  }
+
+}
