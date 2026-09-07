@@ -6274,3 +6274,69 @@ main > section.section + section.section {
     font-size: clamp(44px, 10vw, 60px) !important;
   }
 }
+/* =========================================================
+   TYPOGRAPHY — REDUCE OVERSIZED HEADINGS
+   ========================================================= */
+
+/* HERO — main oversized heading */
+.hero h1 {
+  font-size: clamp(68px, 7.2vw, 118px) !important;
+  line-height: 0.94 !important;
+  letter-spacing: -0.055em !important;
+}
+
+/* SECTION HEADINGS */
+.section-heading h2 {
+  font-size: clamp(52px, 5.2vw, 82px) !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.045em !important;
+}
+
+/* LARGE CASE STUDY / FEATURE HEADINGS */
+.case-studies .case-card h3,
+.case-studies h3 {
+  font-size: clamp(28px, 3vw, 42px) !important;
+  line-height: 1.08 !important;
+}
+
+/* SELECTED WORK POST TITLES */
+.work .selected-post-info h3 {
+  font-size: clamp(26px, 2.7vw, 38px) !important;
+  line-height: 1.12 !important;
+}
+
+/* CTA / CONTACT LARGE HEADING */
+.contact h2,
+.cta h2 {
+  font-size: clamp(52px, 5.2vw, 82px) !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.045em !important;
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .hero h1 {
+    font-size: clamp(48px, 12vw, 68px) !important;
+    line-height: 0.96 !important;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(42px, 10vw, 58px) !important;
+  }
+
+  .case-studies .case-card h3,
+  .case-studies h3 {
+    font-size: 30px !important;
+  }
+
+  .work .selected-post-info h3 {
+    font-size: 27px !important;
+  }
+
+  .contact h2,
+  .cta h2 {
+    font-size: clamp(44px, 10vw, 60px) !important;
+  }
+}
