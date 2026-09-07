@@ -5641,3 +5641,174 @@ footer a[href*="topmate"]:hover,
   }
 
 }
+/* =========================================================
+   TOOLS — ICON ONLY / NO BOX
+   ========================================================= */
+
+.tools-grid {
+  width: 100% !important;
+  max-width: 900px !important;
+  margin: 52px auto 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+
+  gap: 42px !important;
+
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tools-grid .tool {
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 0 !important;
+
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+
+  position: relative !important;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease !important;
+}
+
+.tools-grid .tool:hover {
+  background: transparent !important;
+  transform: translateY(-5px) !important;
+}
+
+.tools-grid .tool-icon {
+  width: 48px !important;
+  height: 48px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 0 !important;
+
+  border: none !important;
+  border-radius: 0 !important;
+
+  background: transparent !important;
+  box-shadow: none !important;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease !important;
+}
+
+.tools-grid .tool-icon img {
+  width: 30px !important;
+  height: 30px !important;
+
+  display: block !important;
+
+  object-fit: contain !important;
+
+  opacity: 0.82 !important;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease !important;
+}
+
+.tools-grid .tool:hover .tool-icon img {
+  transform: scale(1.14) !important;
+  opacity: 1 !important;
+}
+
+
+/* ---------------------------------------------------------
+   TOOL NAME — appears only on hover
+   --------------------------------------------------------- */
+
+.tools-grid .tool::after {
+  content: attr(data-tool);
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -30px;
+
+  transform: translateX(-50%) translateY(4px);
+
+  white-space: nowrap;
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+
+  color: #59645f;
+
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.tools-grid .tool:hover::after {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateX(-50%) translateY(0);
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  .tools-grid {
+    max-width: 520px !important;
+    gap: 34px !important;
+  }
+
+  .tools-grid .tool-icon {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  .tools-grid .tool-icon img {
+    width: 27px !important;
+    height: 27px !important;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .tools-grid {
+    max-width: 320px !important;
+    gap: 28px !important;
+  }
+
+  .tools-grid .tool-icon {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .tools-grid .tool-icon img {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+}
