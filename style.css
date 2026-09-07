@@ -6340,3 +6340,352 @@ main > section.section + section.section {
     font-size: clamp(44px, 10vw, 60px) !important;
   }
 }
+/* =========================================================
+   SELECTED WORK — FINAL EDITORIAL LAYOUT
+   ========================================================= */
+
+section.work {
+  position: relative;
+}
+
+
+/* ---------------------------------------------------------
+   INTRO
+--------------------------------------------------------- */
+
+section.work .work-intro {
+  width: 100% !important;
+  max-width: 760px !important;
+  margin-top: 12px !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  margin-bottom: 58px !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+
+section.work .work-intro p {
+  width: 100% !important;
+  max-width: 760px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+  color: #59645f !important;
+  text-align: left !important;
+}
+
+
+/* ---------------------------------------------------------
+   EACH POST
+--------------------------------------------------------- */
+
+section.work .selected-post {
+  width: 100% !important;
+  max-width: 1160px !important;
+  margin: 0 auto 70px auto !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  cursor: default !important;
+}
+
+
+/* ---------------------------------------------------------
+   SEPARATOR BETWEEN POSTS
+--------------------------------------------------------- */
+
+section.work .selected-post + .selected-post {
+  padding-top: 48px !important;
+  border-top: 1px solid rgba(25, 35, 30, 0.08) !important;
+}
+
+
+/* ---------------------------------------------------------
+   POST HEADER
+--------------------------------------------------------- */
+
+section.work .selected-post-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 20px !important;
+
+  width: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 0 14px 0 !important;
+
+  border-bottom: 1px solid rgba(25, 35, 30, 0.12) !important;
+}
+
+
+section.work .selected-post-number {
+  min-width: 28px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+
+  letter-spacing: 0.08em !important;
+
+  color: #68766f !important;
+}
+
+
+section.work .selected-post-meta {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+section.work .selected-post-meta span {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+
+  letter-spacing: 0.07em !important;
+  text-transform: uppercase !important;
+
+  color: #59645f !important;
+}
+
+
+section.work .selected-post-meta span + span::before {
+  content: "·" !important;
+
+  display: inline-block !important;
+
+  margin: 0 12px !important;
+
+  color: #8b9690 !important;
+}
+
+
+/* ---------------------------------------------------------
+   POST CONTENT
+--------------------------------------------------------- */
+
+section.work .selected-post-info {
+  width: 100% !important;
+  max-width: 940px !important;
+
+  margin: 0 !important;
+  padding: 24px 0 28px 0 !important;
+}
+
+
+section.work .selected-post-info h3 {
+  width: 100% !important;
+  max-width: 940px !important;
+
+  margin: 0 0 22px 0 !important;
+  padding: 0 !important;
+
+  font-size: clamp(29px, 3vw, 43px) !important;
+  font-weight: 600 !important;
+  line-height: 1.1 !important;
+
+  letter-spacing: -0.038em !important;
+
+  color: #111512 !important;
+}
+
+
+/* ---------------------------------------------------------
+   FULL POST DESCRIPTION
+--------------------------------------------------------- */
+
+section.work .selected-post-copy {
+  width: 100% !important;
+  max-width: 790px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+section.work .selected-post-copy p {
+  width: 100% !important;
+  max-width: 790px !important;
+
+  margin: 0 0 14px 0 !important;
+  padding: 0 !important;
+
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 1.72 !important;
+
+  letter-spacing: -0.005em !important;
+
+  color: #59645f !important;
+}
+
+
+section.work .selected-post-copy p:last-child {
+  margin-bottom: 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   POST IMAGE
+--------------------------------------------------------- */
+
+section.work .selected-post-image {
+  width: 100% !important;
+  max-width: 920px !important;
+
+  margin: 0 auto !important;
+  padding: 0 !important;
+
+  overflow: hidden !important;
+
+  background: #ffffff !important;
+
+  border: 1px solid rgba(25, 35, 30, 0.11) !important;
+  border-radius: 12px !important;
+
+  box-shadow: 0 16px 48px rgba(20, 30, 25, 0.07) !important;
+}
+
+
+section.work .selected-post-image img {
+  display: block !important;
+
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  object-fit: contain !important;
+}
+
+
+/* ---------------------------------------------------------
+   REMOVE OLD CARD / HOVER BEHAVIOUR
+--------------------------------------------------------- */
+
+section.work .selected-post:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+
+section.work .selected-post:hover .selected-post-image {
+  transform: none !important;
+  box-shadow: 0 16px 48px rgba(20, 30, 25, 0.07) !important;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  section.work .work-intro {
+    max-width: 100% !important;
+    margin-top: 10px !important;
+    margin-bottom: 42px !important;
+  }
+
+  section.work .work-intro p {
+    max-width: 100% !important;
+    font-size: 14px !important;
+  }
+
+
+  section.work .selected-post {
+    margin-bottom: 52px !important;
+  }
+
+
+  section.work .selected-post + .selected-post {
+    padding-top: 34px !important;
+  }
+
+
+  section.work .selected-post-header {
+    gap: 14px !important;
+    padding-bottom: 12px !important;
+  }
+
+
+  section.work .selected-post-number {
+    min-width: 24px !important;
+    font-size: 11px !important;
+  }
+
+
+  section.work .selected-post-meta span {
+    font-size: 10px !important;
+  }
+
+
+  section.work .selected-post-meta span + span::before {
+    margin: 0 8px !important;
+  }
+
+
+  section.work .selected-post-info {
+    max-width: 100% !important;
+    padding: 20px 0 22px 0 !important;
+  }
+
+
+  section.work .selected-post-info h3 {
+    max-width: 100% !important;
+    margin-bottom: 18px !important;
+
+    font-size: 27px !important;
+    line-height: 1.12 !important;
+  }
+
+
+  section.work .selected-post-copy,
+  section.work .selected-post-copy p {
+    max-width: 100% !important;
+  }
+
+
+  section.work .selected-post-copy p {
+    margin-bottom: 12px !important;
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+  }
+
+
+  section.work .selected-post-image {
+    max-width: 100% !important;
+    border-radius: 9px !important;
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   SMALL MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 480px) {
+
+  section.work .selected-post-info h3 {
+    font-size: 25px !important;
+  }
+
+  section.work .selected-post-copy p {
+    font-size: 13.5px !important;
+  }
+
+}
