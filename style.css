@@ -6689,3 +6689,95 @@ section.work .selected-post:hover .selected-post-image {
   }
 
 }
+/* =========================================================
+   SELECTED WORK — ALIGN EVERYTHING WITH "S" OF HEADING
+========================================================= */
+
+.work .section-heading {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Intro starts exactly under the S of Selected Work */
+.work .work-intro {
+  width: 100% !important;
+  max-width: 900px !important;
+
+  margin-top: 18px !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+
+  padding-left: 0 !important;
+
+  text-align: left !important;
+}
+
+.work .work-intro p {
+  max-width: 780px !important;
+
+  margin-left: 0 !important;
+  margin-right: auto !important;
+
+  text-align: left !important;
+}
+
+/* All posts use the same left starting point */
+.work .selected-post {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* Post header */
+.work .selected-post-header {
+  margin-left: 0 !important;
+}
+
+/* Post content */
+.work .selected-post-info {
+  margin-left: 0 !important;
+}
+
+/* Images also start from the same left line */
+.work .selected-post-image {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 769px) {
+
+  .work .section-heading,
+  .work .work-intro,
+  .work .selected-post {
+    margin-left: 0 !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .work .work-intro {
+    max-width: 100% !important;
+    margin-top: 14px !important;
+  }
+
+  .work .work-intro p {
+    max-width: 100% !important;
+  }
+
+  .work .selected-post-image {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+}
