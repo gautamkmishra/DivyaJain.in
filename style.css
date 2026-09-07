@@ -6090,3 +6090,58 @@ footer a[href*="topmate"]:hover,
     max-width: 100% !important;
   }
 }
+/* =========================================================
+   SELECTED WORK — INTRO HARD FIX
+   ========================================================= */
+
+section.work .work-intro {
+  display: block !important;
+  width: 100% !important;
+  max-width: 760px !important;
+  min-width: 0 !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  text-align: left !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}
+
+section.work .work-intro p {
+  display: block !important;
+  width: 100% !important;
+  max-width: 760px !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  box-sizing: border-box !important;
+  line-height: 1.65 !important;
+}
+
+
+/* Desktop — tighter editorial width */
+@media (min-width: 769px) {
+  section.work .work-intro {
+    max-width: 720px !important;
+  }
+
+  section.work .work-intro p {
+    max-width: 720px !important;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+  section.work .work-intro,
+  section.work .work-intro p {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
