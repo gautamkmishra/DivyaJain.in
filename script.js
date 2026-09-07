@@ -786,3 +786,116 @@ document.querySelectorAll(".selected-post .post-open").forEach((button) => {
     });
   });
 });
+/* =========================================================
+   LIVE DATE & TIME
+========================================================= */
+
+function updateLiveTime() {
+  const timeElement = document.getElementById("liveTime");
+
+  if (!timeElement) return;
+
+  const now = new Date();
+
+  const weekday = now.toLocaleDateString("en-IN", {
+    weekday: "short"
+  });
+
+  const day = now.toLocaleDateString("en-IN", {
+    day: "numeric"
+  });
+
+  const month = now.toLocaleDateString("en-IN", {
+    month: "short"
+  });
+
+  const time = now.toLocaleTimeString("en-IN", {
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true
+  });
+
+  timeElement.textContent =
+    `${weekday} ${day} ${month} · ${time}`;
+}
+
+
+/* Update immediately */
+updateLiveTime();
+
+/* Update every second */
+setInterval(updateLiveTime, 1000);
+
+
+/* =========================================================
+   DARK MODE TOGGLE
+========================================================= */
+
+const darkModeToggle =
+  document.getElementById("darkModeToggle");
+
+if (darkModeToggle) {
+
+  /* Remember user's previous choice */
+  const savedTheme =
+    localStorage.getItem("divya-theme");
+
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+  }
+
+  darkModeToggle.addEventListener("click", function () {
+
+    document.body.classList.toggle("dark-mode");
+
+    const isDark =
+      document.body.classList.contains("dark-mode");
+
+    localStorage.setItem(
+      "divya-theme",
+      isDark ? "dark" : "light"
+    );
+
+  });
+
+}
+
+
+/* =========================================================
+   BASIC CONTENT COPY PROTECTION
+========================================================= */
+
+document.addEventListener("contextmenu", function (event) {
+  event.preventDefault();
+});
+
+document.addEventListener("copy", function (event) {
+  event.preventDefault();
+});
+
+document.addEventListener("cut", function (event) {
+  event.preventDefault();
+});
+
+document.addEventListener("dragstart", function (event) {
+  event.preventDefault();
+});
+
+document.addEventListener("selectstart", function (event) {
+  event.preventDefault();
+});
+
+
+/* Keyboard shortcuts */
+document.addEventListener("keydown", function (event) {
+
+  const key = event.key.toLowerCase();
+
+  if (
+    (event.ctrlKey || event.metaKey) &&
+    ["c", "x", "a", "u", "s"].includes(key)
+  ) {
+    event.preventDefault();
+  }
+
+});
