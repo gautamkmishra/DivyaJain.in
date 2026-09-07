@@ -7270,3 +7270,45 @@ section.work .selected-post-image img {
   }
 
 }
+/* =========================================================
+   SELECTED WORK — ALIGN ALL POST CONTENT
+   Post 01 → Post 06
+========================================================= */
+
+/* Move headline + body to the same left axis
+   as metadata and image */
+section.work .selected-post-info {
+  margin-left: 48px !important;
+  margin-right: 0 !important;
+
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Keep headline and paragraphs aligned together */
+section.work .selected-post-info h3,
+section.work .selected-post-info p {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Keep image on exactly the same axis */
+section.work .selected-post-image {
+  margin-left: 48px !important;
+  margin-right: auto !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  section.work .selected-post-info {
+    margin-left: 0 !important;
+  }
+
+  section.work .selected-post-image {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 100% !important;
+  }
+
+}
