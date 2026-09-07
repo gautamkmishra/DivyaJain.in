@@ -6987,3 +6987,37 @@ section.work .selected-post:hover .selected-post-image {
   margin-left: 0 !important;
   margin-right: auto !important;
 }
+/* =========================
+   SELECTED WORK — FINAL ALIGNMENT
+========================= */
+
+.work .section-heading,
+.work .work-intro,
+.work .selected-post {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Keep Selected Work heading on the same content axis */
+.work .section-heading {
+  width: 1160px !important;
+  max-width: calc(100% - 120px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Put intro on exactly the same left edge as posts */
+.work .work-intro {
+  width: 1160px !important;
+  max-width: calc(100% - 120px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Posts on exactly the same left edge */
+.work .selected-post {
+  width: 1160px !important;
+  max-width: calc(100% - 120px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
