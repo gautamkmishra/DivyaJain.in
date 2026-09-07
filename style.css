@@ -6180,3 +6180,18 @@ section.work .work-intro p {
     max-width: 100% !important;
   }
 }
+/* =========================================================
+   SELECTED WORK — INTRO CLOSE TO HEADING
+   ========================================================= */
+
+section.work .work-intro {
+  margin-top: 8px !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  padding-top: 0 !important;
+}
+
+section.work .work-intro p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
