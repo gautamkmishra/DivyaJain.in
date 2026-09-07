@@ -4859,3 +4859,26 @@ section,
   -webkit-text-fill-color: #111512 !important;
   opacity: 1 !important;
 }
+/* Force footer contact links to stay visible */
+
+footer a[href^="mailto:"],
+footer a[href*="topmate"],
+.footer-contact a,
+.contact-links a {
+  color: #1f2924 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline-block !important;
+  filter: none !important;
+  text-shadow: none !important;
+}
+
+/* Hover bhi same dark rahe */
+
+footer a[href^="mailto:"]:hover,
+footer a[href*="topmate"]:hover,
+.footer-contact a:hover,
+.contact-links a:hover {
+  color: #111512 !important;
+  opacity: 1 !important;
+}
