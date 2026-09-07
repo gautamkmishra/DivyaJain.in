@@ -6037,3 +6037,25 @@ footer a[href*="topmate"]:hover,
     font-size: 9px !important;
   }
 }
+/* =========================================================
+   SELECTED WORK — INTRO ALIGNMENT
+   ========================================================= */
+
+.work .work-intro {
+  width: 100% !important;
+  max-width: 900px !important;
+
+  margin-left: 0 !important;
+  margin-right: auto !important;
+
+  text-align: left !important;
+}
+
+.work .work-intro p {
+  max-width: 760px !important;
+
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+
+  text-align: left !important;
+}
