@@ -7312,3 +7312,137 @@ section.work .selected-post-image {
   }
 
 }
+/* =========================================================
+   HERO TOP UTILITY
+   Time in center + Dark Mode on right
+========================================================= */
+
+.hero-utility-bar {
+  position: relative !important;
+
+  width: 100% !important;
+  min-height: 38px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  margin: 0 0 34px 0 !important;
+  padding: 0 !important;
+}
+
+/* Live date + time — CENTER */
+.hero-live-time {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+
+  transform: translate(-50%, -50%) !important;
+
+  font-size: 11px !important;
+  line-height: 1 !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+
+  color: #59645f !important;
+
+  white-space: nowrap !important;
+}
+
+/* Dark mode button — RIGHT */
+.dark-mode-toggle {
+  position: absolute !important;
+  right: 0 !important;
+  top: 50% !important;
+
+  transform: translateY(-50%) !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+
+  height: 34px !important;
+  padding: 0 13px !important;
+
+  border: 1px solid rgba(25, 35, 30, 0.16) !important;
+  border-radius: 999px !important;
+
+  background: rgba(255, 255, 255, 0.42) !important;
+  color: #151916 !important;
+
+  font-family: inherit !important;
+  font-size: 11px !important;
+  font-weight: 650 !important;
+
+  cursor: pointer !important;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.2s ease !important;
+}
+
+.dark-mode-toggle:hover {
+  background: rgba(255, 255, 255, 0.78) !important;
+}
+
+.dark-mode-icon {
+  font-size: 15px !important;
+  line-height: 1 !important;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode {
+  background: #101311 !important;
+  color: #f1f3ef !important;
+}
+
+body.dark-mode .hero-live-time {
+  color: #aeb7b1 !important;
+}
+
+body.dark-mode .dark-mode-toggle {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  color: #f1f3ef !important;
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .hero-utility-bar {
+    min-height: 34px !important;
+    margin-bottom: 28px !important;
+  }
+
+  .hero-live-time {
+    left: 50% !important;
+    font-size: 10px !important;
+  }
+
+  .dark-mode-toggle {
+    right: 0 !important;
+    height: 31px !important;
+    padding: 0 10px !important;
+    font-size: 10px !important;
+  }
+
+  .dark-mode-label {
+    display: none !important;
+  }
+
+}
