@@ -4832,3 +4832,30 @@ section,
 .work .selected-post-info .text-link {
   text-decoration: none !important;
 }
+/* =========================================================
+   FOOTER CONTACT — DARK & VISIBLE
+   ========================================================= */
+
+.footer-contact a {
+  color: #111512 !important;
+  -webkit-text-fill-color: #111512 !important;
+  opacity: 1 !important;
+  text-decoration: none !important;
+}
+
+.footer-contact a:hover {
+  color: #111512 !important;
+  -webkit-text-fill-color: #111512 !important;
+  opacity: 0.65 !important;
+}
+
+.footer-contact {
+  color: #111512 !important;
+}
+
+.footer-contact span,
+.footer-contact p {
+  color: #111512 !important;
+  -webkit-text-fill-color: #111512 !important;
+  opacity: 1 !important;
+}
