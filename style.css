@@ -7021,3 +7021,32 @@ section.work .selected-post:hover .selected-post-image {
   margin-left: auto !important;
   margin-right: auto !important;
 }
+/* =========================================
+   SELECTED WORK — CONTENT AXIS ALIGNMENT
+   Align post content + images with main
+   content column used throughout the site
+========================================= */
+
+.work .selected-post-info {
+  margin-left: 114px !important;
+  margin-right: 0 !important;
+}
+
+.work .selected-post-image {
+  margin-left: 114px !important;
+  margin-right: 0 !important;
+}
+
+/* Keep the alignment responsive */
+@media (max-width: 900px) {
+  .work .selected-post-info {
+    margin-left: 0 !important;
+  }
+
+  .work .selected-post-image {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
