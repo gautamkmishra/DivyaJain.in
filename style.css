@@ -5812,3 +5812,81 @@ footer a[href*="topmate"]:hover,
   }
 
 }
+/* =========================================================
+   TOOLS & PLATFORMS — FINAL ICON LAYOUT
+   ========================================================= */
+
+.tools-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  column-gap: 58px !important;
+  row-gap: 38px !important;
+  width: 100% !important;
+  max-width: 1120px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+.tools-grid .tool {
+  width: auto !important;
+  min-width: 42px !important;
+  height: 42px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+}
+
+.tools-grid .tool-icon {
+  width: 32px !important;
+  height: 32px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.tools-grid .tool-icon img {
+  width: 30px !important;
+  height: 30px !important;
+  max-width: 30px !important;
+  max-height: 30px !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.tools-grid .tool:hover .tool-icon {
+  transform: translateY(-3px) !important;
+}
+
+.tools-grid .tool-icon {
+  transition: transform .25s ease !important;
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+  .tools-grid {
+    column-gap: 34px !important;
+    row-gap: 30px !important;
+  }
+
+  .tools-grid .tool-icon img {
+    width: 28px !important;
+    height: 28px !important;
+  }
+}
