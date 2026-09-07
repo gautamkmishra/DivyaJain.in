@@ -7050,3 +7050,87 @@ section.work .selected-post:hover .selected-post-image {
     max-width: 100% !important;
   }
 }
+/* =========================================================
+   SELECTED WORK — FINAL LEFT AXIS FIX
+   Image + post content aligned to same left edge
+========================================================= */
+
+/* The post itself uses the main content width */
+section.work .selected-post {
+  width: 100% !important;
+  max-width: 1160px !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Post header starts at the post's left edge */
+section.work .selected-post-header {
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Headline + body start at the same left edge */
+section.work .selected-post-info {
+  width: 100% !important;
+  max-width: 940px !important;
+
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* IMAGE — THIS IS THE IMPORTANT PART */
+section.work .selected-post-image {
+  display: block !important;
+
+  width: 920px !important;
+  max-width: 920px !important;
+
+  margin-top: 0 !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  margin-bottom: 0 !important;
+
+  padding: 0 !important;
+}
+
+/* Image itself */
+section.work .selected-post-image img {
+  display: block !important;
+
+  width: 100% !important;
+  max-width: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  section.work .selected-post {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  section.work .selected-post-info {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  section.work .selected-post-image {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+}
