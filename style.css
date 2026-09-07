@@ -7174,3 +7174,44 @@ section.work .work-intro p {
     max-width: 100% !important;
   }
 }
+/* =========================================================
+   SELECTED WORK — INTRO FINAL POSITION
+========================================================= */
+
+section.work .work-intro {
+  width: auto !important;
+  max-width: none !important;
+
+  margin-left: 107px !important;
+  margin-right: 0 !important;
+
+  padding: 0 !important;
+
+  white-space: nowrap !important;
+}
+
+section.work .work-intro p {
+  width: auto !important;
+  max-width: none !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  white-space: nowrap !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  section.work .work-intro {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    white-space: normal !important;
+  }
+
+  section.work .work-intro p {
+    width: 100% !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+  }
+}
