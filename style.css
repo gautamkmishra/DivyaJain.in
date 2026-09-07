@@ -5243,3 +5243,24 @@ footer a[href*="topmate"]:hover,
     margin-top: 38px !important;
   }
 }
+/* =========================================================
+   ABOUT — HIGHLIGHTED TEXT VISIBILITY
+   ========================================================= */
+
+.about .about-content strong {
+  color: #111512 !important;
+  -webkit-text-fill-color: #111512 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+  text-shadow: none !important;
+  background: transparent !important;
+}
+
+/* Keep the highlighted sentence clearly visible */
+.about .about-content p strong {
+  color: #111512 !important;
+  -webkit-text-fill-color: #111512 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
