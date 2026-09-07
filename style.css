@@ -4956,3 +4956,76 @@ footer a[href*="topmate"]:hover,
   transform: scale(1.05) !important;
   box-shadow: 0 7px 22px rgba(20, 30, 25, 0.14) !important;
 }
+/* =========================================================
+   CASE STUDIES — THREE EQUAL PARALLEL CARDS
+   ========================================================= */
+
+.case-studies .case-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 28px !important;
+  align-items: stretch !important;
+  width: 100% !important;
+}
+
+/* Make Case Study 01 the same width as 02 and 03 */
+.case-studies .case-card-main {
+  grid-column: auto !important;
+  grid-row: auto !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* All three cards share the same visual dimensions */
+.case-studies .case-card {
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 680px !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Keep the internal content balanced */
+.case-studies .case-details {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Keep result section naturally lower */
+.case-studies .case-detail:last-child {
+  margin-top: auto !important;
+}
+
+/* Desktop polish */
+@media (min-width: 1100px) {
+  .case-studies .case-grid {
+    gap: 30px !important;
+  }
+
+  .case-studies .case-card {
+    min-height: 690px !important;
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .case-studies .case-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 620px) {
+  .case-studies .case-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .case-studies .case-card {
+    min-height: auto !important;
+    height: auto !important;
+  }
+}
