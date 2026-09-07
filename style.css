@@ -6145,3 +6145,38 @@ section.work .work-intro p {
     max-width: 100% !important;
   }
 }
+/* =========================================================
+   SELECTED WORK — INTRO ALIGNMENT
+   ========================================================= */
+
+section.work .work-intro {
+  width: calc(100% - 40px) !important;
+  max-width: 800px !important;
+  margin-left: 40px !important;
+  margin-right: auto !important;
+  text-align: left !important;
+}
+
+section.work .work-intro p {
+  width: 100% !important;
+  max-width: 800px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: left !important;
+  white-space: normal !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  line-height: 1.65 !important;
+}
+
+@media (max-width: 768px) {
+  section.work .work-intro {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  section.work .work-intro p {
+    max-width: 100% !important;
+  }
+}
