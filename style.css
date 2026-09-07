@@ -6818,3 +6818,85 @@ section.work .selected-post:hover .selected-post-image {
 .work .selected-post-image {
   margin-left: 0 !important;
 }
+/* =========================================================
+   SELECTED WORK — FINAL LEFT ALIGNMENT
+========================================================= */
+
+/* Section heading: 03 + Selected Work */
+.work .section-heading {
+  display: grid !important;
+  grid-template-columns: 52px 1fr !important;
+  column-gap: 26px !important;
+  align-items: baseline !important;
+
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 03 */
+.work .section-heading .section-number {
+  grid-column: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+
+/* Selected Work */
+.work .section-heading h2 {
+  grid-column: 2 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+
+
+/* Description starts directly below Selected Work */
+.work .work-intro {
+  width: 100% !important;
+  max-width: 900px !important;
+
+  margin-top: 28px !important;
+  margin-left: 78px !important;
+  margin-right: 0 !important;
+
+  padding: 0 !important;
+  text-align: left !important;
+}
+
+.work .work-intro p {
+  max-width: 760px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  text-align: left !important;
+}
+
+
+/* First post starts from same main content line */
+.work .selected-post {
+  margin-left: 78px !important;
+  margin-right: 0 !important;
+  width: calc(100% - 78px) !important;
+}
+
+
+/* Post header */
+.work .selected-post-header {
+  width: 100% !important;
+}
+
+
+/* Post title + content */
+.work .selected-post-info {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+
+/* Images also start from same left line */
+.work .selected-post-image {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
